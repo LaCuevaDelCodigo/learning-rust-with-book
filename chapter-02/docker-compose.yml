@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  rust-book:
+    image: "rust:1.67.1-alpine"
+    user: 1000:1000
+    working_dir: "/app"
+    volumes:
+      - .:/app:rw,Z
+      - cache:/usr/local/cargo
+
+volumes:
+  cache:
